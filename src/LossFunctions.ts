@@ -24,3 +24,13 @@ export const CrossEntropyLoss: LossFunction = (predictions, targets) => {
   }, 0);
   return loss / n;
 };
+export const MAELoss: LossFunction = (predictions, targets) => {
+  if (predictions.length !== targets.length)
+    throw new Error("Predictions and targets must have the same length.");
+  const n = predictions.length;
+  const sumAbsoluteError = predictions.reduce((sum, pred, i) => {
+    const error = Math.abs(pred - targets.at(i)!);
+    return sum + error;
+  }, 0);
+  return sumAbsoluteError / n;
+};
