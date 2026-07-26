@@ -1,9 +1,19 @@
 {
-  "name": "projecttemplate",
+  "name": "@evolite/neural",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
-  "private": true,
+  "homepage": "https://github.com/EvoliteOrg/Neural",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EvoliteOrg/Neural.git"
+  },
+  "bugs": {
+    "url": "https://github.com/EvoliteOrg/Neural/issues"
+  },
+  "license": "MIT",
+  "private": false,
   "files": [
     "LICENSE",
     "README.md",
@@ -11,6 +21,9 @@
     "package.json",
     "package-lock.json"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "bun build ./src/index.ts --outdir ./dist --production --sourcemap --packages external && bun run build:declaration",
     "build:declaration": "tsc --project tsconfig.build.json",
@@ -42,5 +55,8 @@
     "*.{ts,js,css,md}": "prettier --write",
     "*.js": "eslint --cache --fix",
     "*.{js,css,md}": "prettier --write"
+  },
+  "dependencies": {
+    "@evolite/core": "^1.4.1"
   }
 }
