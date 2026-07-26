@@ -4,7 +4,7 @@
   "types": "dist/index.d.ts",
   "type": "module",
   "homepage": "https://github.com/EvoliteOrg/Neural",
-  "version": "1.0.0",
+  "version": "0.0.0-semantic-release",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/EvoliteOrg/Neural.git"
