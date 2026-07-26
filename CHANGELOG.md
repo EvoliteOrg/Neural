@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/EvoliteOrg/Neural/compare/v1.0.0...v1.1.0) (2026-07-26)
+
+
+### Features
+
+* :sparkles: implement HuberLoss ([0d7025a](https://github.com/EvoliteOrg/Neural/commit/0d7025ad28a69bcbacae4d07c384d7a6e29ec794))
+
 # 1.0.0 (2026-07-26)
 
 
