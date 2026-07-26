@@ -34,3 +34,18 @@ export const MAELoss: LossFunction = (predictions, targets) => {
   }, 0);
   return sumAbsoluteError / n;
 };
+export const HuberLoss: LossFunction = (predictions, targets) => {
+  if (predictions.length !== targets.length)
+    throw new Error("Predictions and targets must have the same length.");
+  const n = predictions.length;
+  const delta = 1.0;
+  const loss = predictions.reduce((sum, pred, i) => {
+    const error = pred - targets.at(i)!;
+    if (Math.abs(error) <= delta) {
+      return sum + 0.5 * error * error;
+    } else {
+      return sum + delta * (Math.abs(error) - 0.5 * delta);
+    }
+  }, 0);
+  return loss / n;
+};
